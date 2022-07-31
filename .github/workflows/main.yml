@@ -1,0 +1,32 @@
+name: daka
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 21 * * *'
+
+jobs:
+  sign:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout #同步仓库
+        uses: actions/checkout@v3
+      - name: Set up Python #安装python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8.10
+      - name: Install requests #安装requests
+        run: |
+          pip3 install requests
+      - name: Install ddddocr #安装ddddocr
+        run: |
+          pip3 install ddddocr
+      - name: Install wcwidth #安装wcwidth
+        run: |
+          pip install wcwidth
+      - name: xiaoren2 #开始签到
+        run: |
+          python xiaoren2.py
+
