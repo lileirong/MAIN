@@ -20,13 +20,8 @@ jobs:
       - name: Install requests #安装requests
         run: |
           pip3 install requests
-      - name: Install ddddocr #安装ddddocr
-        run: |
           pip3 install ddddocr
-      - name: Install wcwidth #安装wcwidth
-        run: |
-          pip install wcwidth
-      - name: xiaoren2 #开始签到
-        run: |
+          pip3 install wcwidth
           python xiaoren2.py
+      
 
